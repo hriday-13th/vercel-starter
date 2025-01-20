@@ -2,6 +2,9 @@
 import json
 from http.server import BaseHTTPRequestHandler
 from urllib.parse import parse_qs, urlparse
+from flask_cors import CORS
+
+CORS(app)
 
 # Load the marks data
 with open("marks.json", "r") as f:
