@@ -13,6 +13,7 @@ with open("marks.json", "r") as f:
 class handler(BaseHTTPRequestHandler):
     def do_GET(self):
         # Parse query parameters
+        self.send_header("Access-Control-Allow-Origin", "*")
         query = parse_qs(urlparse(self.path).query)
         names = query.get("name", [])
 
